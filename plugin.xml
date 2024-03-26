@@ -6,8 +6,6 @@
         <clobbers target="Jumio"/>
     </js-module>
     <platform name="ios">
-        <hook type="after_plugin_install" src="hooks/after_plugin_install/mergepodfile.js" />
-        <hook type="after_prepare" src="hooks/after_plugin_install/mergepodfile.js" />
         <config-file target="config.xml" parent="/*">
             <feature name="JumioMobileSDK">
                 <param name="ios-package" value="JumioMobileSDK"/>
@@ -15,7 +13,13 @@
         </config-file>
         <header-file src="src/ios/JumioMobileSDK-Bridging-Header.h"/>
         <source-file src="src/ios/JumioMobileSDK.swift"/>
-        <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+        <!--<dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>-->
+
+        <!-- <hook src="src/ios/add-swift-support.js" type="after_prepare" /> -->
+        <!-- <hook src="src/ios/add-swift-support.js" type="after_platform_add" /> -->
+        <hook src="src/ios/add-swift-support.js" type="after_plugin_add" />
+        <hook type="after_plugin_install" src="hooks/after_plugin_install/mergepodfile.js" />
+        <hook type="after_plugin_install" src="hooks/before_build/podInstall.js" />
 
         <preference name="CAMERA_USAGE_DESCRIPTION"
             default="This will allow ${PRODUCT_NAME} to take photos of your credentials."/>
@@ -43,6 +47,7 @@
                 <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods use-frameworks="true">
+                <pod name="Starscream" spec="4.0.4"/>
                 <pod name="Jumio" spec="4.4.0"/>
             </pods>
         </podspec>
