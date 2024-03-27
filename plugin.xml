@@ -17,9 +17,9 @@
 
         <!-- <hook src="src/ios/add-swift-support.js" type="after_prepare" /> -->
         <!-- <hook src="src/ios/add-swift-support.js" type="after_platform_add" /> -->
-        <hook src="src/ios/add-swift-support.js" type="after_plugin_add" />
-        <hook type="after_plugin_install" src="hooks/after_plugin_install/mergepodfile.js" />
-        <hook type="after_plugin_install" src="hooks/before_build/podInstall.js" />
+        <hook type="after_plugin_add" src="src/ios/add-swift-support.js" />
+        <hook type="after_plugin_add" src="hooks/after_plugin_install/mergepodfile.js" />
+        <hook type="before_build" src="hooks/before_build/podInstall.js" />
 
         <preference name="CAMERA_USAGE_DESCRIPTION"
             default="This will allow ${PRODUCT_NAME} to take photos of your credentials."/>
