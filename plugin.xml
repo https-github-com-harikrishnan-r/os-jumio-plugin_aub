@@ -27,14 +27,7 @@
             <string>$CAMERA_USAGE_DESCRIPTION</string>
         </config-file>
 
-        <config-file target="**/Entitlements-Debug.plist"
-                     parent="com.apple.developer.nfc.readersession.formats">
-            <array><string>TAG</string></array>
-        </config-file>
-        <config-file target="**/Entitlements-Release.plist"
-                     parent="com.apple.developer.nfc.readersession.formats">
-            <array><string>TAG</string></array>
-        </config-file>
+        
 
         <preference name="NFC_USAGE_DESCRIPTION"
             default="This will allow ${PRODUCT_NAME} to scan NFC-capable documents."/>
