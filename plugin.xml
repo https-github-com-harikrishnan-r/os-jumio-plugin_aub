@@ -6,6 +6,7 @@
 	    
         <clobbers target="Jumio"/>
     </js-module>
+	
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="JumioMobileSDK">
