@@ -3,6 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
     <name>JumioMobileSDK</name>
     <js-module name="JumioMobileSDK" src="www/JumioMobileSDK.js">
+	    
         <clobbers target="Jumio"/>
     </js-module>
     <platform name="ios">
